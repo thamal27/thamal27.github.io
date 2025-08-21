@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supipi & Thamal Wedding Invitation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('background.jpg') no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      padding: 30px;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-top: 30px;
+      color: #FFD700;
+    }
+    h2 {
+      font-size: 2rem;
+      margin: 10px 0;
+    }
+    .date {
+      font-size: 1.5rem;
+      margin: 15px 0;
+    }
+    .venue {
+      margin: 20px 0;
+      font-size: 1.2rem;
+    }
+    .countdown {
+      margin: 30px auto;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .countdown div {
+      background: rgba(255,255,255,0.2);
+      padding: 15px;
+      border-radius: 10px;
+      min-width: 70px;
+    }
+    .gallery {
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background: #FFD700;
+      color: #000;
+      font-weight: bold;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #fff;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>The Wedding of</h1>
+    <h2>Supipi & Thamal</h2>
+    <div class="date">On 05 | 12 | 2025</div>
+
+    <div class="venue">
+      📍 Waters Edge, Colombo <br>
+      <a href="https://maps.app.goo.gl/8tM58yzcCzKuXX6q6" target="_blank" style="color:#FFD700">Get Directions</a>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown" id="countdown">
+      <div><span id="days">0</span><br>Days</div>
+      <div><span id="hours">0</span><br>Hours</div>
+      <div><span id="minutes">0</span><br>Minutes</div>
+      <div><span id="seconds">0</span><br>Seconds</div>
+    </div>
+
+    <h2>Our Moments</h2>
+    <div class="gallery">
+      <img src="photo1.jpg" alt="Moment 1">
+      <img src="photo2.jpg" alt="Moment 2">
+      <img src="photo3.jpg" alt="Moment 3">
+    </div>
+
+    <a href="https://forms.gle/xxxxxx" target="_blank" class="btn">RSVP Now</a>
+
+    <footer>
+      With love ❤️ We can’t wait to celebrate with you!  
+    </footer>
+  </div>
+
+  <script>
+    // Countdown Script
+    const weddingDate = new Date("2025-12-05T09:00:00").getTime();
+    const countdown = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "🎉 Happily Married! 🎉";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
