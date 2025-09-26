@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: url('background2.jpg') no-repeat center center/cover;
+      background: url('background.jpg') no-repeat center center/cover;
       color: #fff;
       text-align: center;
     }
@@ -34,7 +34,7 @@
       margin-top: 15px;
       font-size: 1.4rem;
       font-weight: bold;
-      color: #ff4d4d;
+      color: #ff4d4d; /* red theme */
     }
     .date {
       font-size: 1.3rem;
@@ -58,47 +58,23 @@
       border-radius: 10px;
       min-width: 60px;
     }
-
-    /* Carousel Styles */
-    .carousel {
-      position: relative;
-      max-width: 900px;
-      width: 100%;
+    .gallery {
       margin: 30px auto;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-    .carousel img {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
       width: 100%;
-      display: none;
-      border-radius: 12px;
+      max-width: 900px;
     }
-    .carousel img.active {
-      display: block;
-    }
-    .carousel-controls {
-      position: absolute;
-      top: 50%;
+    .gallery img {
       width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
+      border-radius: 10px;
     }
-    .carousel-controls button {
-      background: rgba(0,0,0,0.5);
-      border: none;
-      color: #fff;
-      font-size: 1.5rem;
-      padding: 8px 12px;
-      cursor: pointer;
-      border-radius: 50%;
-    }
-
     .btn {
       display: inline-block;
       margin-top: 25px;
       padding: 12px 20px;
-      background: #ff4d4d;
+      background: #ff4d4d; /* red theme */
       color: #fff;
       font-weight: bold;
       border-radius: 25px;
@@ -114,6 +90,7 @@
       font-size: 0.9rem;
       color: #ddd;
     }
+    /* Responsive adjustments */
     @media (max-width: 768px) {
       h1 { font-size: 2rem; }
       h2 { font-size: 1.4rem; }
@@ -133,7 +110,7 @@
 
     <div class="venue">
       📍 Saminro Grand Palace, Makola <br>
-      <a href="https://share.google/6QGB6Z75ailJuqcf6" target="_blank" style="color:#ff4d4d">Get Directions</a>
+      <a href="https://maps.app.goo.gl/HtDLhRS81tZs1yb29" target="_blank" style="color:#ff4d4d">Get Directions</a>
     </div>
 
     <!-- Countdown -->
@@ -145,20 +122,13 @@
     </div>
 
     <h2>Our Moments</h2>
-    <!-- Carousel -->
-    <div class="carousel" id="carousel">
-      <img src="photo1.jpg" alt="Moment 1" class="active">
+    <div class="gallery">
+      <img src="photo1.jpg" alt="Moment 1">
       <img src="photo2.jpg" alt="Moment 2">
       <img src="photo3.jpg" alt="Moment 3">
-      <img src="photo4.jpg" alt="Moment 4">
-      <img src="photo5.jpg" alt="Moment 5">
-      <div class="carousel-controls">
-        <button id="prev">❮</button>
-        <button id="next">❯</button>
-      </div>
     </div>
 
-    <a href="https://forms.gle/5vTZNVGs2mpqd13N7" target="_blank" class="btn">RSVP Now</a>
+    <a href="https://forms.gle/88Uypo6YAQ28Rfr78" target="_blank" class="btn">RSVP Now</a>
 
     <footer>
       With love ❤️ Looking forward to celebrating again with you!  
@@ -194,33 +164,6 @@
     if (name) {
       document.getElementById("invitee").textContent = `We invite you, ${name}`;
     }
-
-    // Carousel Script
-    const carousel = document.getElementById("carousel");
-    const images = carousel.querySelectorAll("img");
-    const prevBtn = document.getElementById("prev");
-    const nextBtn = document.getElementById("next");
-    let current = 0;
-
-    function showSlide(index) {
-      images.forEach((img, i) => img.classList.toggle("active", i === index));
-    }
-
-    prevBtn.addEventListener("click", () => {
-      current = (current - 1 + images.length) % images.length;
-      showSlide(current);
-    });
-
-    nextBtn.addEventListener("click", () => {
-      current = (current + 1) % images.length;
-      showSlide(current);
-    });
-
-    // Auto-slide every 5 seconds
-    setInterval(() => {
-      current = (current + 1) % images.length;
-      showSlide(current);
-    }, 5000);
   </script>
 </body>
 </html>
