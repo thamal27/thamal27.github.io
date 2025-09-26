@@ -24,7 +24,7 @@
     h1 {
       font-size: 2.5rem;
       margin-top: 20px;
-      color: #FFD700;
+      color: #ff4d4d; /* red theme */
     }
     h2 {
       font-size: 1.8rem;
@@ -34,7 +34,7 @@
       margin-top: 15px;
       font-size: 1.4rem;
       font-weight: bold;
-      color: #FFD700;
+      color: #ff4d4d; /* red theme */
     }
     .date {
       font-size: 1.3rem;
@@ -58,12 +58,24 @@
       border-radius: 10px;
       min-width: 60px;
     }
+    .gallery {
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      width: 100%;
+      max-width: 900px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+    }
     .btn {
       display: inline-block;
       margin-top: 25px;
       padding: 12px 20px;
-      background: #FFD700;
-      color: #000;
+      background: #ff4d4d; /* red theme */
+      color: #fff;
       font-weight: bold;
       border-radius: 25px;
       text-decoration: none;
@@ -71,6 +83,7 @@
     }
     .btn:hover {
       background: #fff;
+      color: #ff4d4d;
     }
     footer {
       margin-top: 40px;
@@ -97,7 +110,7 @@
 
     <div class="venue">
       📍 Saminro Grand Palace, Makola <br>
-      <a href="https://maps.app.goo.gl/T7D6t67kL4jqYpRt7" target="_blank" style="color:#FFD700">Get Directions</a>
+      <a href="https://maps.app.goo.gl/T7D6t67kL4jqYpRt7" target="_blank" style="color:#ff4d4d">Get Directions</a>
     </div>
 
     <!-- Countdown -->
@@ -106,6 +119,13 @@
       <div><span id="hours">0</span><br>Hours</div>
       <div><span id="minutes">0</span><br>Minutes</div>
       <div><span id="seconds">0</span><br>Seconds</div>
+    </div>
+
+    <h2>Our Moments</h2>
+    <div class="gallery">
+      <img src="photo1.jpg" alt="Moment 1">
+      <img src="photo2.jpg" alt="Moment 2">
+      <img src="photo3.jpg" alt="Moment 3">
     </div>
 
     <a href="https://forms.gle/xxxxxx" target="_blank" class="btn">RSVP Now</a>
