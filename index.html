@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Supipi & Thamal Wedding Invitation</title>
+  <title>Supipi & Thamal Homecoming Invitation</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: url('background.jpg') no-repeat center center/cover;
+      background: url('background2.jpg') no-repeat center center/cover;
       color: #fff;
       text-align: center;
     }
@@ -58,18 +58,6 @@
       border-radius: 10px;
       min-width: 60px;
     }
-    .gallery {
-      margin: 30px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
-      width: 100%;
-      max-width: 900px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-    }
     .btn {
       display: inline-block;
       margin-top: 25px;
@@ -100,16 +88,16 @@
 </head>
 <body>
   <div class="overlay">
-    <h1>The Wedding of</h1>
+    <h1>The Homecoming of</h1>
     <h2>Supipi & Thamal</h2>
 
     <div class="invitee" id="invitee">We invite you</div>
 
-    <div class="date">On 05 | 12 | 2025</div>
+    <div class="date">On 07 | 12 | 2025 at 10:30 AM</div>
 
     <div class="venue">
-      📍 Waters Edge, Colombo <br>
-      <a href="https://maps.app.goo.gl/8tM58yzcCzKuXX6q6" target="_blank" style="color:#FFD700">Get Directions</a>
+      📍 Saminro Grand Palace, Makola <br>
+      <a href="https://maps.app.goo.gl/T7D6t67kL4jqYpRt7" target="_blank" style="color:#FFD700">Get Directions</a>
     </div>
 
     <!-- Countdown -->
@@ -120,26 +108,19 @@
       <div><span id="seconds">0</span><br>Seconds</div>
     </div>
 
-    <h2>Our Moments</h2>
-    <div class="gallery">
-      <img src="photo1.jpg" alt="Moment 1">
-      <img src="photo2.jpg" alt="Moment 2">
-      <img src="photo3.jpg" alt="Moment 3">
-    </div>
-
     <a href="https://forms.gle/xxxxxx" target="_blank" class="btn">RSVP Now</a>
 
     <footer>
-      With love ❤️ We can’t wait to celebrate with you!  
+      With love ❤️ Looking forward to celebrating again with you!  
     </footer>
   </div>
 
   <script>
     // Countdown Script
-    const weddingDate = new Date("2025-12-05T09:00:00").getTime();
+    const homecomingDate = new Date("2025-12-07T10:30:00").getTime();
     const countdown = setInterval(() => {
       const now = new Date().getTime();
-      const distance = weddingDate - now;
+      const distance = homecomingDate - now;
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -153,7 +134,7 @@
 
       if (distance < 0) {
         clearInterval(countdown);
-        document.getElementById("countdown").innerHTML = "🎉 Happily Married! 🎉";
+        document.getElementById("countdown").innerHTML = "🎉 Homecoming Celebration! 🎉";
       }
     }, 1000);
 
@@ -166,4 +147,3 @@
   </script>
 </body>
 </html>
-
