@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Supipi & Thamal Homecoming Invitation</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap');
 
   body {
     margin: 0;
@@ -24,31 +24,33 @@
   }
   .logo {
     margin-top: 10px;
-    width: 80px;
+    width: 110px; /* Larger logo */
     height: auto;
   }
   h1 {
     font-size: 2.5rem;
     margin-top: 10px;
-    color: #e63946; /* nicer reddish tone */
+    color: #b11226; /* darker red */
   }
   h2 {
     font-family: 'Great Vibes', cursive;
-    font-size: 3rem;
-    color: #e63946;
+    font-size: 3.5rem; /* larger */
+    color: #b11226;
     margin: 5px 0;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* glow effect */
   }
   .invitee {
     margin-top: 15px;
     font-size: 1.6rem;
     font-weight: bold;
-    color: #e63946;
+    color: #b11226;
   }
   .date { font-size: 1.3rem; margin: 15px 0; }
   .venue {
     margin: 20px 0;
     font-size: 1rem;
   }
+  .venue a { color: #b11226; }
   .countdown {
     margin: 30px auto;
     font-size: 1.2rem;
@@ -74,22 +76,44 @@
   .carousel img {
     width: 100%;
     display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
   }
   .carousel img.active {
     display: block;
+    opacity: 1;
+  }
+  /* Carousel indicators */
+  .indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 8px;
+  }
+  .indicators span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: #888;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .indicators span.active {
+    background: #b11226;
   }
   .btn {
     display: inline-block;
     margin-top: 25px;
     padding: 12px 20px;
-    background: #e63946;
+    background: #b11226;
     color: #fff;
     font-weight: bold;
     border-radius: 25px;
     text-decoration: none;
     transition: 0.3s;
   }
-  .btn:hover { background: #fff; color: #e63946; }
+  .btn:hover { background: #fff; color: #b11226; }
   footer {
     margin-top: 40px;
     font-size: 0.9rem;
@@ -97,10 +121,10 @@
   }
   @media (max-width: 768px) {
     h1 { font-size: 2rem; }
-    h2 { font-size: 2.2rem; }
+    h2 { font-size: 2.5rem; }
     .invitee { font-size: 1.3rem; }
     .date, .venue { font-size: 1rem; }
-    .logo { width: 60px; }
+    .logo { width: 80px; }
   }
 </style>
 </head>
@@ -117,7 +141,7 @@
 
   <div class="venue">
     📍 Crystal Ballroom, Saminro Grand Palace, Makola <br>
-    <a href="https://maps.app.goo.gl/HtDLhRS81tZs1yb29" target="_blank" style="color:#e63946">Get Directions</a>
+    <a href="https://maps.app.goo.gl/HtDLhRS81tZs1yb29" target="_blank">Get Directions</a>
   </div>
 
   <div class="countdown" id="countdown">
@@ -134,6 +158,7 @@
     <img src="photo6.jpg">
     <img src="photo7.jpg">
   </div>
+  <div class="indicators" id="indicators"></div>
 
   <a href="https://forms.gle/88Uypo6YAQ28Rfr78" target="_blank" class="btn">RSVP Now</a>
 
@@ -168,14 +193,35 @@ if (name) {
   document.getElementById("invitee").textContent = `We invite you, ${name}`;
 }
 
-// Simple Carousel
+// Carousel with indicators
 let currentIndex = 0;
 const images = document.querySelectorAll("#carousel img");
+const indicatorsContainer = document.getElementById("indicators");
+
+// Create indicators
+images.forEach((_, i) => {
+  const dot = document.createElement("span");
+  if (i === 0) dot.classList.add("active");
+  dot.addEventListener("click", () => {
+    showImage(i);
+    currentIndex = i;
+  });
+  indicatorsContainer.appendChild(dot);
+});
+const dots = indicatorsContainer.querySelectorAll("span");
+
+function showImage(index) {
+  images.forEach(img => img.classList.remove("active"));
+  dots.forEach(dot => dot.classList.remove("active"));
+  images[index].classList.add("active");
+  dots[index].classList.add("active");
+}
+
+// Auto-play
 setInterval(() => {
-  images[currentIndex].classList.remove("active");
   currentIndex = (currentIndex + 1) % images.length;
-  images[currentIndex].classList.add("active");
-}, 3000);
+  showImage(currentIndex);
+}, 4000);
 </script>
 </body>
 </html>
