@@ -30,26 +30,31 @@
   h2 {
     font-size: 2.8rem;
     margin-top: 10px;
-    color: #f9c74f; /* golden highlight */
+    color: #f9c74f;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
     font-weight: 700;
   }
   h1 {
     font-family: 'Great Vibes', cursive;
     font-size: 4rem;
-    color: #e63946; /* elegant red */
+    color: #e63946;
     margin: 10px 0;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
   }
   .invitee {
     margin-top: 20px;
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 1.6rem;
+    font-weight: 600;
     color: #f1faee;
     text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+    line-height: 1.8;
   }
-  .invitee strong {
+  .invitee .guest-name {
+    display: block;
+    font-size: 2.2rem;
+    font-family: 'Great Vibes', cursive;
     color: #f9c74f;
+    margin: 8px 0;
   }
   .date {
     font-size: 1.4rem;
@@ -138,7 +143,8 @@
   @media (max-width: 768px) {
     h1 { font-size: 2.6rem; }
     h2 { font-size: 2rem; }
-    .invitee { font-size: 1.4rem; }
+    .invitee { font-size: 1.2rem; }
+    .invitee .guest-name { font-size: 1.8rem; }
     .date, .venue { font-size: 1rem; }
     .logo { width: 150px; }
   }
@@ -152,8 +158,9 @@
   <h1>Supipi & Thamal</h1>
 
   <div class="invitee" id="invitee">
-    We warmly invite you to join us in celebrating this beautiful new chapter of our lives, <br>
-    <strong>your presence will make our day truly special!</strong>
+    We warmly invite you <br>
+    <span class="guest-name">Dear Guest</span>
+    to join us in celebrating this beautiful new chapter of our lives!
   </div>
 
   <div class="date">✨ On 07 | 12 | 2025 at 10:30 AM ✨</div>
@@ -209,7 +216,7 @@ const countdown = setInterval(() => {
 const params = new URLSearchParams(window.location.search);
 const name = params.get("name");
 if (name) {
-  document.getElementById("invitee").innerHTML = `We warmly invite you, <strong>${name}</strong>, to join us in celebrating this beautiful new chapter of our lives!`; 
+  document.getElementById("invitee").innerHTML = `We warmly invite you <br><span class='guest-name'>${name}</span><br>to join us in celebrating this beautiful new chapter of our lives!`; 
 }
 
 // Carousel with indicators
