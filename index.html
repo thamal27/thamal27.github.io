@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Supipi & Thamal Homecoming Invitation</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap');
 
   body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: url('background.jpg') no-repeat center center/cover;
     color: #fff;
     text-align: center;
@@ -24,34 +24,45 @@
   }
   .logo {
     margin-top: 10px;
-    width: 250px; /* Larger logo */
+    width: 250px;
     height: auto;
   }
   h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-top: 10px;
-    color: #b11226; /* darker red */
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    color: #f9c74f; /* golden highlight */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    font-weight: 700;
   }
   h1 {
     font-family: 'Great Vibes', cursive;
-    font-size: 3.5rem; /* larger */
-    color: #b11226;
-    margin: 5px 0;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* glow effect */
+    font-size: 4rem;
+    color: #e63946; /* elegant red */
+    margin: 10px 0;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
   }
   .invitee {
-    margin-top: 15px;
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #b11226;
+    margin-top: 20px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f1faee;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
   }
-  .date { font-size: 1.3rem; margin: 15px 0; }
+  .invitee strong {
+    color: #f9c74f;
+  }
+  .date {
+    font-size: 1.4rem;
+    margin: 15px 0;
+    color: #f9c74f;
+    font-weight: 600;
+  }
   .venue {
     margin: 20px 0;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    color: #f1faee;
   }
-  .venue a { color: #b11226; }
+  .venue a { color: #e63946; font-weight: bold; }
   .countdown {
     margin: 30px auto;
     font-size: 1.2rem;
@@ -61,10 +72,12 @@
     flex-wrap: wrap;
   }
   .countdown div {
-    background: rgba(255,255,255,0.2);
-    padding: 12px;
-    border-radius: 10px;
-    min-width: 60px;
+    background: rgba(255,255,255,0.15);
+    padding: 14px;
+    border-radius: 12px;
+    min-width: 70px;
+    color: #f9c74f;
+    font-weight: 600;
   }
   .carousel {
     margin: 30px auto;
@@ -72,7 +85,8 @@
     max-width: 600px;
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
   }
   .carousel img {
     width: 100%;
@@ -84,11 +98,10 @@
     display: block;
     opacity: 1;
   }
-  /* Carousel indicators */
   .indicators {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 12px;
     gap: 8px;
   }
   .indicators span {
@@ -101,48 +114,53 @@
     transition: background 0.3s;
   }
   .indicators span.active {
-    background: #b11226;
+    background: #e63946;
   }
   .btn {
     display: inline-block;
-    margin-top: 25px;
-    padding: 12px 20px;
-    background: #b11226;
+    margin-top: 30px;
+    padding: 14px 24px;
+    background: linear-gradient(45deg, #e63946, #b11226);
     color: #fff;
-    font-weight: bold;
-    border-radius: 25px;
+    font-weight: 700;
+    border-radius: 30px;
     text-decoration: none;
     transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   }
-  .btn:hover { background: #fff; color: #b11226; }
+  .btn:hover { background: #fff; color: #e63946; }
   footer {
     margin-top: 40px;
-    font-size: 0.9rem;
-    color: #ddd;
+    font-size: 1rem;
+    color: #f1faee;
+    font-weight: 500;
   }
   @media (max-width: 768px) {
-    h1 { font-size: 2rem; }
-    h2 { font-size: 2.5rem; }
-    .invitee { font-size: 1.3rem; }
+    h1 { font-size: 2.6rem; }
+    h2 { font-size: 2rem; }
+    .invitee { font-size: 1.4rem; }
     .date, .venue { font-size: 1rem; }
-    .logo { width: 80px; }
+    .logo { width: 150px; }
   }
 </style>
 </head>
 <body>
 <div class="overlay">
-  <!-- Logo -->
   <img src="logo.png" class="logo" alt="Logo">
 
-  <h2>The Homecoming of</h2>
+  <h2>The Homecoming Celebration of</h2>
   <h1>Supipi & Thamal</h1>
 
-  <div class="invitee" id="invitee">We invite you</div>
-  <div class="date">On 07 | 12 | 2025 at 10:30 AM</div>
+  <div class="invitee" id="invitee">
+    We warmly invite you to join us in celebrating this beautiful new chapter of our lives, <br>
+    <strong>your presence will make our day truly special!</strong>
+  </div>
+
+  <div class="date">✨ On 07 | 12 | 2025 at 10:30 AM ✨</div>
 
   <div class="venue">
-     Crystal Ballroom, Saminro Grand Palace, Makola <br>
-    <a href="https://maps.app.goo.gl/HtDLhRS81tZs1yb29" target="_blank">📍Get Directions</a>
+     📍 Crystal Ballroom, Saminro Grand Palace, Makola <br>
+    <a href="https://maps.app.goo.gl/HtDLhRS81tZs1yb29" target="_blank">Get Directions</a>
   </div>
 
   <div class="countdown" id="countdown">
@@ -161,10 +179,10 @@
   </div>
   <div class="indicators" id="indicators"></div>
 
-  <a href="https://forms.gle/88Uypo6YAQ28Rfr78" target="_blank" class="btn">RSVP Now</a>
+  <a href="https://forms.gle/88Uypo6YAQ28Rfr78" target="_blank" class="btn">💌 RSVP Now</a>
 
   <footer>
-    With love ❤️ Looking forward to celebrating with you!  
+    With endless love ❤️ We can’t wait to celebrate this joyous occasion with you!  
   </footer>
 </div>
 
@@ -191,7 +209,7 @@ const countdown = setInterval(() => {
 const params = new URLSearchParams(window.location.search);
 const name = params.get("name");
 if (name) {
-  document.getElementById("invitee").textContent = `We invite you, ${name}`;
+  document.getElementById("invitee").innerHTML = `We warmly invite you, <strong>${name}</strong>, to join us in celebrating this beautiful new chapter of our lives!`; 
 }
 
 // Carousel with indicators
@@ -199,7 +217,6 @@ let currentIndex = 0;
 const images = document.querySelectorAll("#carousel img");
 const indicatorsContainer = document.getElementById("indicators");
 
-// Create indicators
 images.forEach((_, i) => {
   const dot = document.createElement("span");
   if (i === 0) dot.classList.add("active");
@@ -218,7 +235,6 @@ function showImage(index) {
   dots[index].classList.add("active");
 }
 
-// Auto-play
 setInterval(() => {
   currentIndex = (currentIndex + 1) % images.length;
   showImage(currentIndex);
@@ -226,4 +242,3 @@ setInterval(() => {
 </script>
 </body>
 </html>
-
